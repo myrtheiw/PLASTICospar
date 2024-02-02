@@ -10,16 +10,16 @@ Created on Thu Feb  1 18:14:31 2024
 
 ## Documentation
 In this project, there are 10 classes of garbage being trained with YOLOv8 model based on the 10 most found OSPAR categories. There are:
-0: caps_and_lids
-1: cigarette_butts
-2: drinking_cans
-3: food_packaging
-4: food_wrapping
-5: pet_bottles
-6: plastic_cups
-7: plastic_films
-8: styrofoam
-9: undef_hard_plastic
+<br> 0 : caps_and_lids
+<br> 1 : cigarette_butts
+<br> 2 : drinking_cans
+<br> 3 : food_packaging
+<br> 4 : food_wrapping
+<br> 5 : pet_bottles
+<br> 6 : plastic_cups
+<br> 7 : plastic_films
+<br> 8 : styrofoam
+<br> 9 : undef_hard_plastic
 
 To reduce the quality of data annotating since OSPAR categories since there is no clear lines between each classes, we created a "Data Labelling Guidelines".
 This Guidelines can be accessed in ("Documentation/Data Labelling Guidelines.docx") 
@@ -111,18 +111,18 @@ These videos were taken by us during the project and can be used to test the mod
 
 ## Camera Recommendation
 Below is the consideration for camera recommendation:
-High Resolution  Ensure quality and ability to capture small object i.e. Cigarette Butts
-Polarized Lens Filter  Reduce glare from artificial lights and reflective surface
-Wide Dynamic Rage  Able to handle various lighting scenarios
-Direct Connectivity to Laptop  either USB, HDMI, or WIFI which is crucial for real-time monitoring
-Power Source  AC adapter or USB to operate without battery concerns
-Mounting Capability  Camera fixed, need to be able to mounted
+1. High Resolution : Ensure quality and ability to capture small object i.e. Cigarette Butts
+2. Polarized Lens Filter : Reduce glare from artificial lights and reflective surface
+3. Wide Dynamic Rage : Able to handle various lighting scenarios
+4. Direct Connectivity to Laptop : either USB, HDMI, or WIFI which is crucial for real-time monitoring
+5. Power Source : AC adapter or USB to operate without battery concerns
+6. Mounting Capability : Camera fixed, need to be able to mounted
 
 
 
 
-Based on this Criteria, we found some camera: \n
-1.Canon SX740: This is a great choice for 4K videos at 30p. It's really light and has Optical Image Stabilization to keep your shots steady. Also, it's got Wi-Fi and Bluetooth, so connecting it to other devices is a breeze. Price around €409.99 in canon.nl
+Based on this Criteria, we found some camera:
+1. Canon SX740: This is a great choice for 4K videos at 30p. It's really light and has Optical Image Stabilization to keep your shots steady. Also, it's got Wi-Fi and Bluetooth, so connecting it to other devices is a breeze. Price around €409.99 in canon.nl
 
 2. Sony HX99: This compact camera is awesome for 4K videos. It comes with an 18.2 MP sensor and can zoom up to 30x, or even 60x with a special feature. Around €479.00 in sony.nl
 
