@@ -26,6 +26,8 @@ This Guidelines can be accessed in ("Documentation/Data Labelling Guidelines.doc
 
 General Images and Videos taken during the project can be accessed in General Images Folder.
 
+For all of the data, images, video, code, and documentation related to this project can be accessed in:
+[`TU DELFT ACCESS`](https://tud365.sharepoint.com/:f:/s/PLASTIC/Eul0m8qcwnRPjb7IiBlr9KoBkV4chwi4yFUYqnuNLxtnDg?e=hcoxF4)
 
 
 
