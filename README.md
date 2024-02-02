@@ -66,10 +66,10 @@ Count is the object counted, while the confidence is the average confidence per 
 2. oject_counter in Python ("Python Code/object_counter.py")
 This code include all of the class and funtion needed on the main code. This include setting counting 	lines, drawing bounding box, counting objects, print result on frames, and export to csv.
 
-3. YOLOv8 Training in Jupyter Notebook ("Python Code/YOLOv8_TRAIN.ipynb")
+3. YOLOv8 Training in Jupyter Notebook ("Python Code/yolov8_train.ipynb")
 This code mainly used to train yolov8 model.
 
-4. Deploy Model Roboflow in Jupyter Notebook ("Python Code/Deploy Model Roboflow.ipynb")
+4. Deploy Model Roboflow in Jupyter Notebook ("Python Code/deploy_model_roboflow.ipynb")
 This is the code we usually used to deploy the model to Roboflow.
 
 
