@@ -1,11 +1,10 @@
 <H1> DSAIE TU DELFT PLASTIC PROJECT WITH NORIA SUSTAINABLE INNOVATORS </H1>
 
 
-"""
 Created on Thu Feb  1 18:14:31 2024
 
 @author: Henry Gunawan, Dimitris Mantas, Sam Parijs
-"""
+
 
 
 
