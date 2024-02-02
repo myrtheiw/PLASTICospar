@@ -36,16 +36,16 @@ General Images and Videos taken during the project can be accessed in General Im
 ## Trained Model
 In this project, there are 3 yolov8 models trained:
 1. yolov8l ("Fix Model/yolov8l/") 
-mAP50-95: 0.7243986158142944
-mAP50: 0.9177766691513292
+mAP50-95: 0.724
+mAP50: 0.918
 
 2. yolov8m ("Fix Model/yolov8m/")
-mAP50-95: 0.7279940582076118
-mAP50: 0.9221554106625808
+mAP50-95: 0.728
+mAP50: 0.922
 
 3. yolov8s ("Fix Model/yolov8s/")
-mAP50-95: 0.7319026845630761
-mAP50: 0.9256298845751608
+mAP50-95: 0.732
+mAP50: 0.926
 
 Inside the folder of these models consist of the best weights, detail of training such as confusion matric, data batch, arguments, and results.
 
