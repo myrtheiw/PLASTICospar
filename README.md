@@ -121,7 +121,7 @@ Mounting Capability  Camera fixed, need to be able to mounted
 
 
 
-Based on this Criteria, we found some camera:
+Based on this Criteria, we found some camera: \n
 1.Canon SX740: This is a great choice for 4K videos at 30p. It's really light and has Optical Image Stabilization to keep your shots steady. Also, it's got Wi-Fi and Bluetooth, so connecting it to other devices is a breeze. Price around €409.99 in canon.nl
 
 2. Sony HX99: This compact camera is awesome for 4K videos. It comes with an 18.2 MP sensor and can zoom up to 30x, or even 60x with a special feature. Around €479.00 in sony.nl
