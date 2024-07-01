@@ -175,13 +175,16 @@ class ObjectCounter:
         for i in range(len(self.names)):
             outcount_label += f"{self.names[i]} : {self.count_class[i]} | "
 
+        # self.annotator.display_analytics(self.im0, outcount_label, self.count_txt_color, self.count_color, self.tf)
 
-        self.annotator.count_labels(
-            counts=outcount_label,
-            count_txt_size=self.count_txt_thickness,
-            txt_color=self.count_txt_color,
-            color=self.count_color,
-        )
+        
+
+        # self.annotator.display_counts(
+        #     counts=outcount_label,
+        #     #count_txt_size=self.count_txt_thickness,
+        #     count_txt_color=self.count_txt_color,
+        #     count_bg_color=self.count_color,
+        # )
 
 
     def export_to_csv(self):

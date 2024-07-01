@@ -1,12 +1,13 @@
-import os
-import cv2
-import csv
+import ultralytics
 from ultralytics import YOLO
+import cv2
+import os
+import csv
 from ultralytics.trackers.bot_sort import BOTSORT
 
 # Define paths
-image_folder = '/home/myrtheiw/PlasticNoria/Data'  # Change to your image folder
-output_folder = '/home/myrtheiw/PlasticNoria/Data_output'  # Change to your desired output folder
+image_folder = '/home/myrtheiw/PlasticNoria/Data' 
+output_folder = '/home/myrtheiw/PlasticNoria/Data_output'  
 model_path = '/home/myrtheiw/PlasticNoria/PLASTIC/FixModel/yolov8s/weights/last.pt'
 
 # Ensure the output folder exists
@@ -21,11 +22,18 @@ csv_file_path = os.path.join(output_folder, "results.csv")
 csv_columns = ['Image', 'Class', 'Count']
 csv_data = []
 
+args = {
+    'proximity_thresh': 0.5,
+    'appearance_thresh': 0.25,
+    'frame_rate': 30,
+    'track_buffer': 50
+}
+
 # Initialize tracker
-tracker = BOTSORT()
+tracker = BOTSORT(args=args, frame_rate=args['frame_rate'])
 
 # Process each image in the folder
-for filename in sorted(os.listdir(image_folder)):
+for filename in os.listdir(image_folder):
     if filename.lower().endswith(('.png', '.jpg', '.jpeg')):
         image_path = os.path.join(image_folder, filename)
         output_image_path = os.path.join(output_folder, filename)
@@ -39,36 +47,26 @@ for filename in sorted(os.listdir(image_folder)):
         # Detect objects
         results = model(im0)
 
-        # Prepare detections for tracker
-        detections = []
-        for result in results:
-            for bbox in result.boxes:
-                cls_id = int(bbox.cls)
-                label = model.names[cls_id]
-                confidence = float(bbox.conf)  # Convert tensor to float
-                xmin, ymin, xmax, ymax = bbox.xyxy[0]
-                detections.append([xmin, ymin, xmax, ymax, confidence, cls_id])
-
-        # Update tracker with detections
-        tracked_objects = tracker.update(torch.tensor(detections))
-
         # Initialize a dictionary to count objects
         object_counts = {}
 
         # Draw bounding boxes and labels on the image
-        for obj in tracked_objects:
-            xmin, ymin, xmax, ymax, track_id, cls_id = obj
-            label = model.names[int(cls_id)]
+        for result in results:
+            for bbox in result.boxes:
+                cls_id = int(bbox.cls)
+                label = model.names[cls_id]
+                confidence = float(bbox.conf)
+                xmin, ymin, xmax, ymax = bbox.xyxy[0]
 
-            # Draw the bounding box and label on the image
-            cv2.rectangle(im0, (int(xmin), int(ymin)), (int(xmax), int(ymax)), (0, 255, 0), 2)
-            cv2.putText(im0, f'{label} {track_id}', (int(xmin), int(ymin) - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+                # Draw the bounding box and label on the image
+                cv2.rectangle(im0, (int(xmin), int(ymin)), (int(xmax), int(ymax)), (0, 255, 0), 2)
+                cv2.putText(im0, f'{label} {confidence:.2f}', (int(xmin), int(ymin) - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
 
-            # Count objects
-            if label in object_counts:
-                object_counts[label] += 1
-            else:
-                object_counts[label] = 1
+                # Count objects
+                if label in object_counts:
+                    object_counts[label] += 1
+                else:
+                    object_counts[label] = 1
 
         # Save the annotated image
         cv2.imwrite(output_image_path, im0)
