@@ -6,9 +6,9 @@ import csv
 from ultralytics.trackers.bot_sort import BOTSORT
 
 # Define paths
-image_folder = '/home/myrtheiw/PlasticNoria/Data' 
-output_folder = '/home/myrtheiw/PlasticNoria/Data_output'  
-model_path = '/home/myrtheiw/PlasticNoria/PLASTIC/FixModel/yolov8s/weights/last.pt'
+image_folder = '/home/myrtheiw/PLASTICospar/Data' 
+output_folder = '/home/myrtheiw/PLASTICospar/Data_output'  
+model_path = '/home/myrtheiw/PLASTICospar/FixModel/yolov8s/weights/last.pt'
 
 # Ensure the output folder exists
 if not os.path.exists(output_folder):
@@ -18,19 +18,19 @@ if not os.path.exists(output_folder):
 model = YOLO(model_path)
 
 # Initialize CSV writer
-csv_file_path = os.path.join(output_folder, "results.csv")
+csv_file_path = os.path.join(output_folder, "results1.csv")
 csv_columns = ['Image', 'Class', 'Count']
 csv_data = []
 
-args = {
-    'proximity_thresh': 0.5,
-    'appearance_thresh': 0.25,
-    'frame_rate': 30,
-    'track_buffer': 50
-}
+# args = {
+#     'proximity_thresh': 0.5,
+#     'appearance_thresh': 0.25,
+#     'frame_rate': 1/2,
+#     'track_buffer': 50
+# }
 
-# Initialize tracker
-tracker = BOTSORT(args=args, frame_rate=args['frame_rate'])
+# # Initialize tracker
+# tracker = BOTSORT(args=args, frame_rate=args['frame_rate'])
 
 # Process each image in the folder
 for filename in os.listdir(image_folder):
@@ -45,7 +45,7 @@ for filename in os.listdir(image_folder):
             continue
 
         # Detect objects
-        results = model(im0)
+        results = model.track(source=im0, show=True, tracker="bytetrack.yaml")
 
         # Initialize a dictionary to count objects
         object_counts = {}
