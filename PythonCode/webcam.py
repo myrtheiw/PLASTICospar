@@ -2,7 +2,7 @@ import cv2
 import time
 import os
 
-def capture_photos(save_folder, interval=2):
+def capture_photos(save_folder, interval=7):
     # Ensure the save folder exists
     if not os.path.exists(save_folder):
         os.makedirs(save_folder)
