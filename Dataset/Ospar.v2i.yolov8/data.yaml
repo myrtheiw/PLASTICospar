@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 10
+names: ['caps_and_lids', 'cigarette_butts', 'drinking_cans', 'food_packaging', 'food_wrapping', 'pet_bottles', 'plastic_cups', 'plastic_films', 'styrofoam', 'undef_hard_plastic']
+
+roboflow:
+  workspace: noria-flf3q
+  project: ospar
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/noria-flf3q/ospar/dataset/2
